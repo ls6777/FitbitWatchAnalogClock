@@ -1,0 +1,132 @@
+line 
+{
+  stroke-linecap: round;
+}
+
+.background 
+{
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+#hours 
+{
+  fill: white;
+}
+
+#mins 
+{
+  fill: white;
+}
+
+#secs 
+{
+  fill: red;
+}
+
+#hr 
+{
+  font-size: 33;
+  font-family: System-Regular;
+  text-length: 3;
+  text-anchor: end;
+  x: 100%;
+  y: 98%;
+  fill: white;
+}
+
+.hr_icon 
+{
+  x: 92%;
+  y: 81%;
+  width: "24";
+  height: "24";
+  href: "icons/stat_hr_solid_24px.png" ;
+  fill: red;
+}
+
+#date 
+{
+  font-size: 23;
+  font-family: Colfax;
+  font-weight: bold;
+  text-length: 6;
+  text-anchor: start;
+  x: 60%;
+  y: 52%;
+  fill: white;
+}
+
+#day 
+{
+  font-size: 23;
+  font-family: Colfax-Light;
+  text-length: 3;
+  text-anchor: start;
+  x: 60%;
+  y: 45%;
+  fill: white;
+}
+
+#batt 
+{
+  font-size: 23;
+  font-family: System-Regular;
+  text-length: 3;
+  text-anchor: middle;
+  x: 7%;
+  y: 7%;
+  fill: white;
+}
+
+.battery_icon 
+{
+  x: 0%;
+  y: 0%;
+  width: 50;
+  height: 28;
+  href: "icons/battery.png";  
+}
+
+#steps 
+{
+  font-size: 25;
+  font-family: System-Regular;
+  text-length: 5;
+  text-anchor: end;
+  x: 100%;
+  y: 6%;
+  fill: white;
+}
+
+.steps_icon 
+{
+  x: 92%;
+  y: 8%;
+  width: 24;
+  height: 24;
+  href: "icons/stat_steps_solid_24px.png";
+  fill: yellow;
+}
+
+#cals 
+{
+  font-size: 27;
+  font-family: System-Regular;
+  text-length: 4;
+  text-anchor: start;
+  x: 0%;
+  y: 98%;
+  fill: white;
+}
+
+.cals_icon 
+{
+  x: 0%;
+  y: 81%;
+  width: 24;
+  height: 24;
+  href: "icons/stat_cals_solid_24px.png";
+  fill: orange;
+}

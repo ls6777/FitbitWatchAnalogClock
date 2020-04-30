@@ -22,7 +22,7 @@ line
 
 #secs 
 {
-  fill: red;
+  fill: white;
 }
 
 #hr 
@@ -43,7 +43,7 @@ line
   width: "24";
   height: "24";
   href: "icons/stat_hr_solid_24px.png" ;
-  fill: red;
+  fill: white;
 }
 
 #date 
@@ -107,7 +107,7 @@ line
   width: 24;
   height: 24;
   href: "icons/stat_steps_solid_24px.png";
-  fill: yellow;
+  fill: white;
 }
 
 #cals 
@@ -128,5 +128,5 @@ line
   width: 24;
   height: 24;
   href: "icons/stat_cals_solid_24px.png";
-  fill: orange;
+  fill: white;
 }

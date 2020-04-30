@@ -108,6 +108,8 @@ clock.ontick = (e) =>
   
   // Change battery text color based on percentage
   lblBattery.text = `${charge}`;
+  lblBattery.style.fill = "white";
+  /*
   if (charge > 75)
   {
     lblBattery.style.fill = "green";
@@ -124,6 +126,7 @@ clock.ontick = (e) =>
   {
     lblBattery.style.fill = "red";
   }
+  */
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

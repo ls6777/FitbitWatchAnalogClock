@@ -114,6 +114,8 @@
   <text id="steps">----</text>
   <image class="cals_icon" />
   <text id="cals">----</text>
+  <image class="elevation_icon" />
+  <text id="elevation">----</text>
 
   <g transform="translate(50%,50%)">
     <use href="#hour_marker" fill="white" />

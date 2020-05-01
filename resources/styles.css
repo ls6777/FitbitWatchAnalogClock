@@ -112,7 +112,7 @@ line
 
 #cals 
 {
-  font-size: 27;
+  font-size: 23;
   font-family: System-Regular;
   text-length: 4;
   text-anchor: start;
@@ -128,5 +128,26 @@ line
   width: 24;
   height: 24;
   href: "icons/stat_cals_solid_24px.png";
+  fill: white;
+}
+
+#elevation 
+{
+  font-size: 27;
+  font-family: System-Regular;
+  text-length: 8;
+  text-anchor: middle;
+  x: 50%;
+  y: 25%;
+  fill: white;
+}
+
+.elevation_icon 
+{
+  x: 46%;
+  y: 8%;
+  width: 24;
+  height: 24;
+  href: "icons/stat_elevation_32px_p.png";
   fill: white;
 }

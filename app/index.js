@@ -4,6 +4,7 @@ import document from "document";
 import { preferences } from "user-settings";
 import { today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
+import { Barometer } from "barometer";
 import { battery } from "power";
 import * as messaging from "messaging";
 import {
@@ -22,6 +23,7 @@ const lblDay = document.getElementById("day");
 const lblHR = document.getElementById("hr");
 const lblSteps = document.getElementById("steps");
 const lblCals = document.getElementById("cals");
+const lblElevation = document.getElementById("elevation");
 
 // Get HR
 const hrm = new HeartRateSensor();
@@ -30,6 +32,21 @@ hrm.onreading = function ()
   lblHR.text = `${hrm.heartRate}`;
 }
 hrm.start ();
+
+// Get barometer/elevation
+const bar = new Barometer();
+bar.onreading = function ()
+{ 
+  lblElevation.text = Math.round(altitudeFromPressure(bar.pressure / 100)) + " ft";
+}
+bar.start ();
+
+// Converts pressure in millibars to altitude in feet
+// https://en.wikipedia.org/wiki/Pressure_altitude
+function altitudeFromPressure(pressure) 
+{
+  return (1 - (pressure/1013.25)**0.190284)*145366.45;
+}
 
 // Set analog clock
 const hourHand = document.getElementById("hours");

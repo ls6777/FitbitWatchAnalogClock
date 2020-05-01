@@ -40,9 +40,9 @@ line
 {
   x: 92%;
   y: 81%;
-  width: "24";
-  height: "24";
-  href: "icons/stat_hr_solid_24px.png" ;
+  width: 24;
+  height: 24;
+  href: "icons/stat_hr_open_24px.png" ;
   fill: white;
 }
 
@@ -71,12 +71,12 @@ line
 
 #batt 
 {
-  font-size: 23;
+  font-size: 27;
   font-family: System-Regular;
   text-length: 3;
   text-anchor: middle;
-  x: 7%;
-  y: 7%;
+  x: 8%;
+  y: 8%;
   fill: white;
 }
 
@@ -84,8 +84,8 @@ line
 {
   x: 0%;
   y: 0%;
-  width: 50;
-  height: 28;
+  width: 56;
+  height: 31;
   href: "icons/battery.png";  
 }
 
@@ -102,17 +102,17 @@ line
 
 .steps_icon 
 {
-  x: 92%;
+  x: 90%;
   y: 8%;
-  width: 24;
-  height: 24;
-  href: "icons/stat_steps_solid_24px.png";
+  width: 28;
+  height: 28;
+  href: "icons/stat_steps_open_32px.png";
   fill: white;
 }
 
 #cals 
 {
-  font-size: 23;
+  font-size: 25;
   font-family: System-Regular;
   text-length: 4;
   text-anchor: start;
@@ -124,10 +124,10 @@ line
 .cals_icon 
 {
   x: 0%;
-  y: 81%;
-  width: 24;
-  height: 24;
-  href: "icons/stat_cals_solid_24px.png";
+  y: 80%;
+  width: 32;
+  height: 32;
+  href: "icons/stat_cals_open_32px.png";
   fill: white;
 }
 

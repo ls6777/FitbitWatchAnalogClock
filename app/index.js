@@ -27,7 +27,7 @@ const lblElevation = document.getElementById("elevation");
 
 // Get HR
 const hrm = new HeartRateSensor();
-hrm.onreading = function () 
+hrm.onreading = () =>
 {
   lblHR.text = `${hrm.heartRate}`;
 }
@@ -35,7 +35,7 @@ hrm.start ();
 
 // Get barometer/elevation
 const bar = new Barometer();
-bar.onreading = function ()
+bar.onreading = () =>
 { 
   lblElevation.text = Math.round(altitudeFromPressure(bar.pressure / 100)) + " ft";
 }
@@ -126,24 +126,6 @@ clock.ontick = (e) =>
   // Change battery text color based on percentage
   lblBattery.text = `${charge}`;
   lblBattery.style.fill = "white";
-  /*
-  if (charge > 75)
-  {
-    lblBattery.style.fill = "green";
-  } 
-  else if (charge > 50) 
-  {
-    lblBattery.style.fill = "yellow";
-  }
-  else if (charge > 25)
-  {
-    lblBattery.style.fill = "orange";
-  }
-  else
-  {
-    lblBattery.style.fill = "red";
-  }
-  */
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

@@ -136,10 +136,4 @@
 
   <circle cx="50%" cy="50%" r="4" fill="white" />
   <circle cx="50%" cy="50%" r="2" fill="black" />
-
-  //<rect id="top_half" width="30%" height="30%" x="35%" y="5%" fill="#ffffff" opacity="0" pointer-events="visible" />
-  //<rect id="btm_half" width="90%" height="45%" x="5%" y="50%" fill="#ffffff" opacity="0" pointer-events="visible" />
-  
-  //<rect id="battery" />
-  
 </svg>

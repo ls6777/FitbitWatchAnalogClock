@@ -1,4 +1,5 @@
-function mySettings(props) {
+function mySettings(props) 
+{
     return (
       <Page>
         <Section>

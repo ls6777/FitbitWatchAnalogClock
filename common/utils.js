@@ -38,3 +38,17 @@ export function zeroPad(i)
   }
   return i;
 }
+
+// Truncate Text
+export const truncateText = (t, max) => 
+{
+  //truncatedText = t.substring(0, Math.min(max,t.length));
+  if (t.length <= max) 
+  {
+    return t;
+  } 
+  else 
+  {    
+    return t.substring(0,(max-2)) + ".."
+  }
+}

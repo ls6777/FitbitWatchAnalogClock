@@ -1,5 +1,10 @@
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
+import * as mySettings from "./companion-settings";
+import Weather from '../common/weather/companion';
+
+let weather = new Weather;
+mySettings.initialize();
 
 // Message socket opens
 messaging.peerSocket.onopen = () => 

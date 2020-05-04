@@ -48,9 +48,8 @@ line
 
 #date 
 {
-  font-size: 23;
-  font-family: Colfax;
-  font-weight: bold;
+  font-size: 27;
+  font-family: System-Regular;
   text-length: 6;
   text-anchor: start;
   x: 60%;
@@ -60,8 +59,8 @@ line
 
 #day 
 {
-  font-size: 23;
-  font-family: Colfax-Light;
+  font-size: 27;
+  font-family: System-Regular;
   text-length: 3;
   text-anchor: start;
   x: 60%;
@@ -150,4 +149,20 @@ line
   height: 24;
   href: "icons/stat_elevation_32px_p.png";
   fill: white;
+}
+
+.weather_icon
+{
+  x: 42%;
+  y: 63%;
+  width: 50;
+  height: 50;
+  href: "icons/wi-day-sunny.png";
+  fill: white;
+}
+
+.weatherText {
+  fill: white;
+  font-size: 32;
+  font-family: System-Regular;
 }

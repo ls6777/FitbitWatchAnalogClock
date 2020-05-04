@@ -1,17 +1,14 @@
 import { me as appbit } from "appbit";
 import clock from "clock";
 import document from "document";
-import { preferences } from "user-settings";
+import { units, locale, preferences } from "user-settings";
 import { today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
 import { Barometer } from "barometer";
 import { battery } from "power";
+import * as myWeather from "./components/weather";
 import * as messaging from "messaging";
-import {
-  calculateDistance,
-  getDisplayDay,
-  getDisplayMonth,
-  zeroPad,} from "../common/utils";
+import * as util from "../common/utils";
 
 // Update the clock every second
 clock.granularity = "seconds";
@@ -24,6 +21,10 @@ const lblHR = document.getElementById("hr");
 const lblSteps = document.getElementById("steps");
 const lblCals = document.getElementById("cals");
 const lblElevation = document.getElementById("elevation");
+//const lblTemperature = document.getElementById("temperature");
+
+let weatherConditions = document.getElementById("weatherConditions");
+let weatherTemperature = document.getElementById("weatherTemperature");
 
 // Get HR
 const hrm = new HeartRateSensor();
@@ -40,6 +41,22 @@ bar.onreading = () =>
   lblElevation.text = Math.round(altitudeFromPressure(bar.pressure / 100)) + " ft";
 }
 bar.start ();
+
+/* ------- WEATHER ---------- */
+const weatherCallback = (data) => 
+{
+  let temperatureUnit = units.temperature; // temperature unit came from FitBit App settings via user-settings.units
+  console.log("Weather in main: " + JSON.stringify(data));
+  if(data.is_success === true) 
+  {
+    const WEATHER_COND_MAX_LENGTH = 12;
+    //weatherConditions.text  = util.truncateText(data.conditions, WEATHER_COND_MAX_LENGTH);
+    weatherTemperature.text = temperatureUnit === "C" ? 
+      Math.round(data.temperature) + "°C" :
+      Math.round(data.temperature * 9.0 / 5.0 + 32) + "°F";
+  }
+};
+myWeather.initialize(weatherCallback);
 
 // Converts pressure in millibars to altitude in feet
 // https://en.wikipedia.org/wiki/Pressure_altitude
@@ -119,8 +136,8 @@ clock.ontick = (e) =>
   const month = now.getMonth();
   const dayOfMonth = now.getDate();
   const day = now.getDay();
-  const displayDay = getDisplayDay(day);
-  const displayMonth = getDisplayMonth(month);
+  const displayDay = util.getDisplayDay(day);
+  const displayMonth = util.getDisplayMonth(month);
   const charge = battery.chargeLevel;
   
   // Change battery text color based on percentage

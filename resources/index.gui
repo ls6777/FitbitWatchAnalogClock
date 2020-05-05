@@ -116,13 +116,15 @@
   <text id="cals">----</text>
   <image class="elevation_icon" />
   <text id="elevation">----</text>
-  <image class="weather_icon" />
 
     <!-- Weather and temperature -->
   <!--<text id="weatherConditions" x="25%" y="45%" class="weatherText"
     //  text-anchor="middle" text-length="20">Loading...</text> -->
   <text id="weatherTemperature" x="50%" y="90%" class="weatherText"
       text-anchor="middle" text-length="20">--</text>
+  
+  <image id="weather_icon" href="icons/weather/clearsky-day.png"
+         width="50" height="50" x="42%" y="63%" pointer-events="visible"/>
 
   <g transform="translate(50%,50%)">
     <use href="#hour_marker" fill="white" />

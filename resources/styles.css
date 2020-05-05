@@ -151,6 +151,7 @@ line
   fill: white;
 }
 
+/*
 .weather_icon
 {
   x: 42%;
@@ -160,6 +161,7 @@ line
   href: "icons/wi-day-sunny.png";
   fill: white;
 }
+*/
 
 .weatherText {
   fill: white;

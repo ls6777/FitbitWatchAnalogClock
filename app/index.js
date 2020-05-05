@@ -7,6 +7,7 @@ import { HeartRateSensor } from "heart-rate";
 import { Barometer } from "barometer";
 import { battery } from "power";
 import * as myWeather from "./components/weather";
+import * as wIcons from "../common/weather/icons";
 import * as messaging from "messaging";
 import * as util from "../common/utils";
 
@@ -22,8 +23,8 @@ const lblSteps = document.getElementById("steps");
 const lblCals = document.getElementById("cals");
 const lblElevation = document.getElementById("elevation");
 //const lblTemperature = document.getElementById("temperature");
-
-let weatherConditions = document.getElementById("weatherConditions");
+const weatherIcon = document.getElementById("weather_icon");
+//let weatherConditions = document.getElementById("weatherConditions");
 let weatherTemperature = document.getElementById("weatherTemperature");
 
 // Get HR
@@ -51,6 +52,8 @@ const weatherCallback = (data) =>
   {
     const WEATHER_COND_MAX_LENGTH = 12;
     //weatherConditions.text  = util.truncateText(data.conditions, WEATHER_COND_MAX_LENGTH);
+    weatherIcon.href = wIcons.getWeatherIcon("Clear", false);
+    
     weatherTemperature.text = temperatureUnit === "C" ? 
       Math.round(data.temperature) + "°C" :
       Math.round(data.temperature * 9.0 / 5.0 + 32) + "°F";
@@ -143,6 +146,19 @@ clock.ontick = (e) =>
   // Change battery text color based on percentage
   lblBattery.text = `${charge}`;
   lblBattery.style.fill = "white";
+  
+  /*
+  if (0 == secs % 2)
+  {
+    weatherIcon.href = "icons/wi-cloudy.png";
+    console.log("icon 1");
+  }
+  else
+  {
+    weatherIcon.href = "icons/wi-rain.png";
+    console.log("icon 2");
+  }
+  */
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

@@ -5,11 +5,12 @@ import { geolocation } from "geolocation";
 // import Weather from '../common/weather/companion';
 // let weather = new Weather;
 
+
+
 export default class Weather 
 {
   constructor() 
   {
-    console.log("Weather constructor 2");
     messaging.peerSocket.addEventListener("message", (evt) => 
     {
       if (evt.data !== undefined && evt.data.command == "weather") 
@@ -18,6 +19,66 @@ export default class Weather
       }
     });
   }
+}
+
+function getWeatherCondition(id)
+{
+  if (id >= 200 && id < 300)
+    {
+      return "Thunderstorm";
+    }
+  else if (id >= 300 && id < 400)
+    {
+      return "Drizzle";
+    }
+  else if (id >= 500 && id < 600)
+    {
+      return "Rain";
+    }
+  else if (id >= 600 && id < 700)
+    {
+      return "Snow";
+    }
+  else if (id == 711)
+    {
+      return "Smoke";
+    }
+  else if (id == 731)
+    {
+      return "Dust";
+    }
+  else if (id == 741)
+    {
+      return "Fog";
+    }
+  else if (id == 781)
+    {
+      return "Tornado";
+    }
+  else if (id == 800)
+    {
+      return "Clear";
+    }
+  else if (id == 801)
+    {
+      return "Few Clouds";
+    }
+  else if (id == 802)
+    {
+      return "Scattered Clouds";
+    }
+  else if (id == 803)
+    {
+      return "Broken Clouds";
+    }
+  else if (id == 804)
+    {
+      return "Overcast Clouds";
+    }
+  else
+    {
+      return "Clear";
+    }
 }
 
 const getWeather = () => 
@@ -60,8 +121,10 @@ const fetchWeatherOpenweather = (lat, lon) =>
       const weather= 
       {
         temperature: data["main"]["temp"],
-        conditions: data["weather"][0]["main"]
+        conditions: getWeatherCondition(data["weather"][0]["id"]),
+        isDay: (data.dt > data.sys.sunrise && data.dt < data.sys.sunset)
       }
+      console.log("cond code = " + data["weather"][0]["id"])
       console.log("Weather: " + weather.conditions);
       returnWeatherData(weather);
     });

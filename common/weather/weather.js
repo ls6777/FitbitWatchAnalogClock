@@ -8,6 +8,7 @@ export default class Weather
     let conditions  = undefined;
     let updated_at  = undefined;
     let is_success  = undefined;
+    let isDay       = undefined;
     
     this.onsuccess = undefined;
     this.onerror   = undefined;
@@ -43,6 +44,7 @@ export default class Weather
       this.conditions  = data.conditions ? data.conditions : "Loading...";
       this.updated_at  = new Date;
       this.is_success  = data.conditions ? true : false;
+      this.isDay       = data.isDay;
     }
   }
 };

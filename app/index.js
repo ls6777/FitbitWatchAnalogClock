@@ -22,7 +22,6 @@ const lblHR = document.getElementById("hr");
 const lblSteps = document.getElementById("steps");
 const lblCals = document.getElementById("cals");
 const lblElevation = document.getElementById("elevation");
-//const lblTemperature = document.getElementById("temperature");
 const weatherIcon = document.getElementById("weather_icon");
 //let weatherConditions = document.getElementById("weatherConditions");
 let weatherTemperature = document.getElementById("weatherTemperature");
@@ -50,9 +49,11 @@ const weatherCallback = (data) =>
   console.log("Weather in main: " + JSON.stringify(data));
   if(data.is_success === true) 
   {
-    const WEATHER_COND_MAX_LENGTH = 12;
+    //console.log(data.conditions);
+    //console.log("isDay = " + data.isDay);
+    //const WEATHER_COND_MAX_LENGTH = 12;
     //weatherConditions.text  = util.truncateText(data.conditions, WEATHER_COND_MAX_LENGTH);
-    weatherIcon.href = wIcons.getWeatherIcon("Clear", false);
+    weatherIcon.href = wIcons.getWeatherIcon(data.conditions, data.isDay);
     
     weatherTemperature.text = temperatureUnit === "C" ? 
       Math.round(data.temperature) + "°C" :

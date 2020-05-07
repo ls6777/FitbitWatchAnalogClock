@@ -23,22 +23,14 @@ export function getWeatherIcon(condition, isDay)
       return `icons/weather/fog.png`;
     case "Tornado":
       return `icons/weather/tornado.png`;
-    case Conditions.FewClouds:
+    case "Few Clouds":
       return `icons/weather/fewclouds-${period}.png`;
-    case Conditions.ScatteredClouds:
+    case "Scattered Clouds":
       return `icons/weather/scatteredclouds-${period}.png`;
-    case Conditions.BrokenClouds:
-      return `icons/weather/brokenclouds-${period}.png`;
-    case Conditions.ShowerRain:
-      return 'icons/weather/showerrain.png';
-    case Conditions.Rain:
-      return 'icons/weather/rain.png';
-    case Conditions.Snow:
-      return 'icons/weather/snow.png';
-    case Conditions.Mist:
-      return 'icons/weather/mist.png';
-    case Conditions.Unknown:
-      return 'icons/weather/clearsky-day.png';
+    case "Broken Clouds":
+      return `icons/weather/brokenclouds.png`;
+    case "Overcast Clouds":
+      return `icons/weather/overcastclouds.png`;
     
     default:
       return 'icons/weather/clearsky-day.png';

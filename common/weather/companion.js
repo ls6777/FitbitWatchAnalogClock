@@ -43,7 +43,7 @@ function getWeatherCondition(id)
     {
       return "Smoke";
     }
-  else if (id == 731)
+  else if (id == 731 || id == 761)
     {
       return "Dust";
     }

@@ -151,15 +151,16 @@ clock.ontick = (e) =>
   /*
   if (0 == secs % 2)
   {
-    weatherIcon.href = "icons/wi-cloudy.png";
-    console.log("icon 1");
+    weatherIcon.href = wIcons.getWeatherIcon(tempData.conditions, true);
+    //weatherIcon.href = "icons/wi-cloudy.png";
+    //console.log("icon 1");
   }
   else
   {
-    weatherIcon.href = "icons/wi-rain.png";
-    console.log("icon 2");
-  }
-  */
+    weatherIcon.href = wIcons.getWeatherIcon(tempData.conditions, false);
+    //weatherIcon.href = "icons/wi-rain.png";
+    //console.log("icon 2");
+  }*/
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

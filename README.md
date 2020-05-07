@@ -2,13 +2,13 @@
 * Anlaog Clock for Fitbit Versa with several stats.  
 * Simple black and white layout
 * Contains the following stats:
-* * Battery level
-* * Steps
-* * Heart Rate
-* * Calories
-* * Approxiamate elevation (uses barometer only)
-* * Day/Date
-* * Current weather at current location (Temperature and Icon for conditions)
+  * Battery level
+  * Steps
+  * Heart Rate
+  * Calories
+  * Approxiamate elevation (uses barometer only)
+  * Day/Date
+  * Current weather at current location (Temperature and Icon for conditions)
 
 # Reference
 This project uses code from 

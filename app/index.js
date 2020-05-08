@@ -23,7 +23,6 @@ const lblSteps = document.getElementById("steps");
 const lblCals = document.getElementById("cals");
 const lblElevation = document.getElementById("elevation");
 const weatherIcon = document.getElementById("weather_icon");
-//let weatherConditions = document.getElementById("weatherConditions");
 let weatherTemperature = document.getElementById("weatherTemperature");
 
 // Get HR
@@ -38,7 +37,16 @@ hrm.start ();
 const bar = new Barometer();
 bar.onreading = () =>
 { 
-  lblElevation.text = Math.round(altitudeFromPressure(bar.pressure / 100)) + " ft";
+  let distanceUnit = units.distance;
+  let elevation = Math.round(altitudeFromPressure(bar.pressure / 100));
+  if ("us"== distanceUnit)
+  {
+    lblElevation.text = elevation + " ft";
+  }
+  else
+  {
+    lblElevation.text = Math.round(elevation / 3.281) + " m";
+  }
 }
 bar.start ();
 
@@ -49,10 +57,6 @@ const weatherCallback = (data) =>
   console.log("Weather in main: " + JSON.stringify(data));
   if(data.is_success === true) 
   {
-    //console.log(data.conditions);
-    //console.log("isDay = " + data.isDay);
-    //const WEATHER_COND_MAX_LENGTH = 12;
-    //weatherConditions.text  = util.truncateText(data.conditions, WEATHER_COND_MAX_LENGTH);
     weatherIcon.href = wIcons.getWeatherIcon(data.conditions, data.isDay);
     
     weatherTemperature.text = temperatureUnit === "C" ? 
@@ -132,7 +136,7 @@ messaging.peerSocket.onclose = () =>
 
 // Update the clock every tick event
 clock.ontick = (e) => 
-{
+{  
   const now = e.date;
   const hours = now.getHours() % 12;
   const mins = now.getMinutes();
@@ -146,21 +150,7 @@ clock.ontick = (e) =>
   
   // Change battery text color based on percentage
   lblBattery.text = `${charge}`;
-  lblBattery.style.fill = "white";
-  
-  /*
-  if (0 == secs % 2)
-  {
-    weatherIcon.href = wIcons.getWeatherIcon(tempData.conditions, true);
-    //weatherIcon.href = "icons/wi-cloudy.png";
-    //console.log("icon 1");
-  }
-  else
-  {
-    weatherIcon.href = wIcons.getWeatherIcon(tempData.conditions, false);
-    //weatherIcon.href = "icons/wi-rain.png";
-    //console.log("icon 2");
-  }*/
+  //lblBattery.style.fill = "white";
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

@@ -1,7 +1,7 @@
 <svg>
   <image class="background" />
   <defs>
-    // Clock markings
+    <!-- Clock markings -->
     <symbol id="hour_marker_one">
       <g id="container">
         <line x1="0" y1="-48%" x2="0" y2="-50%+5" stroke-width="5" fill="inherit" />
@@ -82,7 +82,7 @@
       </use>
     </symbol>
 
-    //Clock Hands
+     <!-- Clock Hands -->
     <symbol id="min_hand">
       <line x1="0" y1="-50%" x2="0" y2="-8%" stroke-width="5" fill="inherit" />
       <line x1="0" y1="-3" x2="0" y2="-8%" stroke-width="1" fill="inherit" />
@@ -94,7 +94,6 @@
       <line x1="0" y1="-35%" x2="0" y2="-32%" stroke-width="10" fill="inherit" />
       <line x1="0" y1="-9%" x2="0" y2="-8%" stroke-width="10" fill="inherit" />
       <line x1="0" y1="-3" x2="0" y2="-8%" stroke-width="1" fill="inherit" />
-
     </symbol>
     
     <symbol id="sec_hand">
@@ -104,28 +103,39 @@
   
   <!-- end symbols -->
   
+  <!-- Date and Day -->
   <text id="date" />
   <text id="day" />
+  
+  <!-- HeartRate -->
   <image class="hr_icon" />
   <text id="hr">--</text>
+  
+  <!-- Battery -->
   <image class="battery_icon" />
   <text id="batt">--</text>
+  
+  <!-- Steps -->
   <image class="steps_icon" />
   <text id="steps">----</text>
+  
+  <!-- calories -->
   <image class="cals_icon" />
   <text id="cals">----</text>
+  
+  <!-- elevation -->
   <image class="elevation_icon" />
   <text id="elevation">----</text>
 
-    <!-- Weather and temperature -->
-  <!--<text id="weatherConditions" x="25%" y="45%" class="weatherText"
-    //  text-anchor="middle" text-length="20">Loading...</text> -->
-  <text id="weatherTemperature" x="50%" y="90%" class="weatherText"
+  <!-- Weather Temperature -->
+  <text id="weatherTemperature" x="23%" y="65%" class="weatherText"
       text-anchor="middle" text-length="20">--</text>
   
+  <!-- Weather Condition Icon -->
   <image id="weather_icon" href="icons/weather/clearsky-day.png"
-         width="50" height="50" x="42%" y="63%" pointer-events="visible"/>
+         width="65" height="65" x="12%" y="36%" pointer-events="visible"/>
 
+  <!-- Clock hands -->
   <g transform="translate(50%,50%)">
     <use href="#hour_marker" fill="white" />
     <use href="#min_marker" fill="#5a5a5a" />
@@ -143,6 +153,7 @@
     <use href="#sec_hand" />
   </g>
 
+  <!-- clock face -->
   <circle cx="50%" cy="50%" r="4" fill="white" />
   <circle cx="50%" cy="50%" r="2" fill="black" />
 </svg>

@@ -5,8 +5,6 @@ import { geolocation } from "geolocation";
 // import Weather from '../common/weather/companion';
 // let weather = new Weather;
 
-
-
 export default class Weather 
 {
   constructor() 
@@ -86,7 +84,6 @@ const getWeather = () =>
   let n = new Date;
   console.log('Updating Weather from companion and calling geolocation at ' + n);
   geolocation.getCurrentPosition(locationSuccess, locationError);
-  //console.log("Position: " + lat + ", " + lon);
 };
 
 const locationSuccess = (position) => 
@@ -104,8 +101,10 @@ const locationError = (error) =>
 
 const fetchWeatherOpenweather = (lat, lon) => 
 {
-  const APIKEY = '40ed40883f0964911396ea2c04020029';
+  const APIKEY = 'Your API Key Here';
+  //const APIKEY = 'Your API Key Here';
   const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
+  //const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather?';
   let url = ENDPOINT + '&lat=' + lat + '&lon=' + lon + '&appid=' + APIKEY;
   console.log('Calling OpenWeather.org API: ' + url); 
   fetch(url)
@@ -125,33 +124,6 @@ const fetchWeatherOpenweather = (lat, lon) =>
         isDay: (data.dt > data.sys.sunrise && data.dt < data.sys.sunset)
       }
       console.log("cond code = " + data["weather"][0]["id"])
-      console.log("Weather: " + weather.conditions);
-      returnWeatherData(weather);
-    });
-  })
-  .catch(function(err) 
-  {
-    console.log("Error while fetching weather: " + err);
-  });
-};  
-
-const fetchWeatherUnderground = (lat, lon) => 
-{
-  const APIKEY = '';
-  
-  console.log('Calling OpenWeather.org API');
-  const url = 'http://api.wunderground.com/api/' + APIKEY + '/conditions/astronomy/q/' + lat + ',' + lon + '.json';
-  fetch(url)
-  .then(function(response)
-  {
-    response.json()
-    .then(function(data) 
-    {
-      const weather = 
-      {
-        temperature: data["current_observation"]["temp_c"],
-        conditions: data["current_observation"]["weather"]
-      }
       console.log("Weather: " + weather.conditions);
       returnWeatherData(weather);
     });

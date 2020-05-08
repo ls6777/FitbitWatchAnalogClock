@@ -33,6 +33,6 @@ export function getWeatherIcon(condition, isDay)
       return `icons/weather/overcastclouds.png`;
     
     default:
-      return 'icons/weather/clearsky-day.png';
+      return `icons/weather/clearsky-day.png`;
   }
 }

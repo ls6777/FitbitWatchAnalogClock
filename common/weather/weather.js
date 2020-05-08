@@ -48,5 +48,3 @@ export default class Weather
     }
   }
 };
-
-//setInterval(fetch, 30*1000*60);

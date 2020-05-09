@@ -101,10 +101,9 @@ const locationError = (error) =>
 
 const fetchWeatherOpenweather = (lat, lon) => 
 {
-  const APIKEY = 'Your API Key Here';
-  //const APIKEY = 'Your API Key Here';
+  const APIKEY = 'Your API key Here';
   const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
-  //const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather?';
+ 
   let url = ENDPOINT + '&lat=' + lat + '&lon=' + lon + '&appid=' + APIKEY;
   console.log('Calling OpenWeather.org API: ' + url); 
   fetch(url)

@@ -10,6 +10,8 @@
   * Day/Date
   * Current weather at current location (Temperature and Icon for conditions)
 
+![](https://github.com/ls6777/FitbitWatchAnalogClock/blob/master/screenshot.png)
+
 # Reference
 This project uses code from 
 * https://github.com/antiKk/SimpleAnalog

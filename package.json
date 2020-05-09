@@ -2,7 +2,7 @@
   "fitbit": {
     "appUUID": "498f14a4-c260-4909-bb8c-95cdb702d442",
     "appType": "clockface",
-    "appDisplayName": "StatsAnalogCleanLook",
+    "appDisplayName": "B&W Analog Stats",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -18,7 +18,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "StatsAnalogCleanLook"
+        "name": "B&W Analog Stats"
       }
     },
     "defaultLanguage": "en-US"

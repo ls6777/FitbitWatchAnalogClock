@@ -6,6 +6,7 @@ import { today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
 import { Barometer } from "barometer";
 import { battery } from "power";
+import { display } from "display";
 import * as myWeather from "./components/weather";
 import * as wIcons from "../common/weather/icons";
 import * as messaging from "messaging";
@@ -26,29 +27,45 @@ const weatherIcon = document.getElementById("weather_icon");
 let weatherTemperature = document.getElementById("weatherTemperature");
 
 // Get HR
-const hrm = new HeartRateSensor();
-hrm.onreading = () =>
+if (HeartRateSensor) 
 {
-  lblHR.text = `${hrm.heartRate}`;
+  const hrm = new HeartRateSensor();
+  hrm.addEventListener("reading", () => 
+  {
+    lblHR.text = `${hrm.heartRate}`;
+  });
+  display.addEventListener("change", () => 
+  {
+    // Automatically stop the sensor when the screen is off to conserve battery
+    display.on ? hrm.start() : hrm.stop();
+  });
+  hrm.start();
 }
-hrm.start ();
 
 // Get barometer/elevation
-const bar = new Barometer();
-bar.onreading = () =>
-{ 
-  let distanceUnit = units.distance;
-  let elevation = Math.round(altitudeFromPressure(bar.pressure / 100));
-  if ("us"== distanceUnit)
+if (Barometer) 
+{
+  const barometer = new Barometer({ frequency: 1 });
+  barometer.addEventListener("reading", () => 
   {
-    lblElevation.text = elevation + " ft";
-  }
-  else
+    let distanceUnit = units.distance;
+    let elevation = Math.round(altitudeFromPressure(barometer.pressure / 100));
+    if ("us"== distanceUnit)
+    {
+      lblElevation.text = elevation + " ft";
+    }
+    else
+    {
+      lblElevation.text = Math.round(elevation / 3.281) + " m";
+    }
+  });
+  display.addEventListener("change", () => 
   {
-    lblElevation.text = Math.round(elevation / 3.281) + " m";
-  }
+    // Automatically stop the sensor when the screen is off to conserve battery
+    display.on ? barometer.start() : barometer.stop();
+  });
+  barometer.start();
 }
-bar.start ();
 
 /* ------- WEATHER ---------- */
 const weatherCallback = (data) => 

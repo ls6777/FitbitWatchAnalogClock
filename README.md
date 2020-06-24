@@ -1,4 +1,5 @@
 # FitbitWatchAnalogClock
+* Available on Fitbit Store here: https://gallery.fitbit.com/details/4c2791c7-2411-4812-84fc-25412cd5ff52
 * Anlaog Clock for Fitbit Versa with several stats.  
 * Simple black and white layout
 * Contains the following stats:

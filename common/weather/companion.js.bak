@@ -9,7 +9,6 @@ export default class Weather
 {
   constructor() 
   {
-    console.log("Weather Constructed");
     messaging.peerSocket.addEventListener("message", (evt) => 
     {
       if (evt.data !== undefined && evt.data.command == "weather") 
@@ -26,11 +25,11 @@ function getWeatherCondition(id)
     {
       return "Thunderstorm";
     }
-  else if ((id >= 300 && id < 400) || (id == 500))
+  else if (id >= 300 && id < 400)
     {
       return "Drizzle";
     }
-  else if (id >= 501 && id < 600)
+  else if (id >= 500 && id < 600)
     {
       return "Rain";
     }

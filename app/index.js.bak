@@ -26,13 +26,6 @@ const lblElevation = document.getElementById("elevation");
 const weatherIcon = document.getElementById("weather_icon");
 let weatherTemperature = document.getElementById("weatherTemperature");
 
-// Allow AOD
-//if (display.aodAvailable && appbit.permissions.granted('access_aod')) 
-//{
-	// Say we support AOD
-//	display.aodAllowed = true;
-//}
-
 // Get HR
 if (HeartRateSensor) 
 {
@@ -174,6 +167,7 @@ clock.ontick = (e) =>
   
   // Change battery text color based on percentage
   lblBattery.text = `${charge}`;
+  //lblBattery.style.fill = "white";
   
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);

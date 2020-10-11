@@ -102,7 +102,7 @@ const locationError = (error) =>
 
 const fetchWeatherOpenweather = (lat, lon) => 
 {
-  const APIKEY = '5c035b699dc36ece8df1627be06a71b7';
+  const APIKEY = 'Your API key Here';
   const ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
  
   let url = ENDPOINT + '&lat=' + lat + '&lon=' + lon + '&appid=' + APIKEY;

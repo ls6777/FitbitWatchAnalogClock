@@ -33,6 +33,16 @@ let weatherTemperature = document.getElementById("weatherTemperature");
 //	display.aodAllowed = true;
 //}
 
+// Create a hidden button to fetch weather
+let clickRect = document.getElementById("clickRect");
+clickRect.addEventListener("click", () => 
+{  
+  console.log("Button Clicked");
+  weatherIcon.href = `icons/weather/clearsky-day.png`;
+  weatherTemperature.text = "--";
+  myWeather.fetchWeather();
+});
+
 // Get HR
 if (HeartRateSensor) 
 {
@@ -188,3 +198,5 @@ clock.ontick = (e) =>
     lblCals.text = `${today.adjusted.calories}`;
   }
 }
+
+

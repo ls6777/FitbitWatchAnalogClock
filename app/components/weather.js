@@ -12,6 +12,12 @@ export function initialize(callback)
   console.log("Weather initialized");
 }
 
+export function fetchWeather()
+{
+  weather.fetch();
+  console.log("Weather fetched");
+}
+
 messaging.peerSocket.addEventListener("open", function(evt) 
 {    
   weather.fetch();

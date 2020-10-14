@@ -10,6 +10,7 @@
   * Approxiamate elevation (uses barometer only)
   * Day/Date
   * Current weather at current location (Temperature and Icon for conditions)
+* Pressing the clockface (invisible button) updates the weather on-demand for current time and location. Otherwise, weather is updated every 30 minutes automatically.
 
 ![](https://github.com/ls6777/FitbitWatchAnalogClock/blob/master/screenshot.png)
 
